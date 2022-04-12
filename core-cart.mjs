@@ -11,6 +11,7 @@ const safeSum = (a, b) => ((a * 100) + (b * 100)) / 100; // Javascript e i decim
 const safeSubtraction = (a, b) => ((a * 100) - (b * 100)) / 100;
 
 const capitalize = (str) => `${str[0].toUpperCase()}${str.substring(1).toLowerCase()}`; // Prima lettera maiuscola, altre lettere minuscole.
+const capitalizeMultiWord = (str) => str.split(/(\s+)/).reduce( (tempString, word) => `${tempString}${capitalize(word)}`, "");
 
 const frame = (sideStr, centralChar, width) => `${sideStr} ${centralChar.repeat( width - ((sideStr.length * 2) + 2) )} ${sideStr}`; // Genera una linea separatrice.
 
@@ -32,10 +33,11 @@ export {
     safeSum,
     safeSubtraction,
     capitalize,
+    capitalizeMultiWord,
     frame,
     alignLeftRight,
     getProductByEan,
     getUserByUuid,
     getPromoByName,
-    discountedPrice    
+    discountedPrice
 };

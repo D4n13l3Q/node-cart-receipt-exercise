@@ -52,7 +52,7 @@ const checkout = function(cart) {
     
     receipt.push(core.frame("*", "-", 54));
     
-    cartProducts.forEach(product => receipt.push(core.alignLeftRight(`   [${product.ean}]    ${core.capitalize(product.name)}`, `${product.price.toFixed(2)}    `, 54)));
+    cartProducts.forEach(product => receipt.push(core.alignLeftRight(`   [${product.ean}]    ${core.capitalizeMultiWord(product.name)}`, `${product.price.toFixed(2)}    `, 54)));
     
     receipt.push(core.frame("*", "-", 54));
     
